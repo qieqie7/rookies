@@ -24,6 +24,15 @@
     "husky": "^4.2.5"
   },
   "dependencies": {
-    "commander": "^5.0.0"
+    "axios": "^0.19.2",
+    "commander": "^5.0.0",
+    "consolidate": "^0.15.1",
+    "download-git-repo": "^3.0.2",
+    "ejs": "^3.0.2",
+    "fse": "^4.0.1",
+    "inquirer": "^7.1.0",
+    "metalsmith": "^2.3.0",
+    "ncp": "^2.0.0",
+    "ora": "^4.0.4"
   }
 }

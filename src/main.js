@@ -13,8 +13,6 @@ Reflect.ownKeys(mapActions).forEach(action => {
       if (action === '*') {
         console.log(description);
       } else {
-        console.log(process.argv);
-        console.log('action: ', action);
         const method = require(path.join(__dirname, action));
         // 前面三个 [node, hola, create, ...其他参数]
         method(...process.argv.slice(3));
