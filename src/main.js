@@ -4,7 +4,7 @@ const initCommands = require('./commands');
 const { version } = require('./utils/env');
 
 function main() {
-  program.on('--help', () => console.log('\nExample:'));
+  // program.on('--help', () => console.log('\nExample:'));
 
   // 初始化命令
   initCommands(program);

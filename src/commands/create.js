@@ -62,8 +62,9 @@ function createCommand(program) {
     .command('create <projectName>')
     .alias('c')
     .description('创建一个项目')
-    .option('-d, --debug <type>', 'output extra debugging')
     .action((projectName, cmdObj) => create(projectName));
+
+  // program.on('--help', () => console.log(`  hola create test-project`));
 }
 
 module.exports = createCommand;
