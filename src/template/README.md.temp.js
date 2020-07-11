@@ -1,5 +1,4 @@
-function generateTemp() {
-  return `# 目标
+const temp = `# 目标
 
 ### 一期目标
 
@@ -43,6 +42,9 @@ function generateTemp() {
 - 按需配置
 - 作为 cli 安装
 `;
+
+function generateTemp() {
+  return temp;
 }
 
 module.exports = generateTemp;
