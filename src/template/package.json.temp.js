@@ -7,10 +7,6 @@ const temp = `{
     "build": "rm -rf ./dist && cross-env TS_NODE_PROJECT=\\"./config/tsconfig-for-webpack-config.json\\" NODE_ENV=\\"production\\" webpack --config ./config/webpack.config.prod.ts",
     "dev": "cross-env TS_NODE_PROJECT=\\"./config/tsconfig-for-webpack-config.json\\"  webpack-dev-server --config ./config/webpack.config.dev.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ykst615/hola-cli.git"
-  },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",

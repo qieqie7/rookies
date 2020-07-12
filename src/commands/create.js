@@ -1,17 +1,16 @@
-const fse = require('fse');
+const fse = require('fs-extra');
 const path = require('path');
 const { cwd } = require('../utils/env');
 const { runCmd } = require('../utils/run-cmd');
 
 async function writeFile(filePath, projectPath) {
   const _path = path.join(projectPath, filePath);
-  await fse.touchFile(_path);
-  await fse.writeFile(_path, require(`../template/${filePath}.temp`)());
+  const tempData = require(`../template/${filePath}.temp`)();
+  await fse.outputFile(_path, tempData);
   return;
 }
 
 async function create(projectName) {
-  projectName = 'my_test';
   const projectPath = path.join(cwd, projectName);
   try {
     // 1. 正常创建项目根目录
@@ -41,7 +40,18 @@ async function create(projectName) {
         'package.json',
         'README.md',
       ];
-      await Promise.all(files.map(filePath => writeFile(filePath, projectPath)));
+      const filesCount = files.length;
+      console.log(`开始写入模板，共计${filesCount}个文件`);
+      let writeSuccessCount = 0;
+      await Promise.all(
+        files.map(filePath =>
+          (async () => {
+            await writeFile(filePath, projectPath);
+            writeSuccessCount += 1;
+            console.log(`完成 ${writeSuccessCount}/${filesCount}`);
+          })(),
+        ),
+      );
     } catch (error) {
       console.log(error);
       process.exit(1);
