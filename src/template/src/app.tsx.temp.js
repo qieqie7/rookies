@@ -1,21 +1,17 @@
-const temp = `// TODO: polyfill 的按需加载
-// import '@babel/polyfill';
-import React from 'react';
+const temp = `import React from 'react';
 import ReactDom from 'react-dom';
-import './app.less';
+import style from './app.less';
+import MyTest from '@/components/MyTest/MyTest';
 
 const root = document.getElementById('root');
 
 const App = () => (
-  <div className="welcomeWrap">
-    <h1>Hola</h1>
-    <p>no amount of money ever bought a second of time.</p>
-    <p>寸金难买寸光阴</p>
+  <div className={style.welcomeWrap}>
+    <MyTest />
   </div>
 );
 
-ReactDom.render(<App />, root);
-`;
+ReactDom.render(<App />, root);`;
 
 function generateTemp() {
   return temp;

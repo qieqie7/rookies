@@ -23,8 +23,7 @@ const temp = `{
     "space-before-function-paren": ["error", "never"],
     "prettier/prettier": "error"
   }
-}
-`;
+}`;
 
 function generateTemp() {
   return temp;

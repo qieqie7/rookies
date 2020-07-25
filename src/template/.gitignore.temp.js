@@ -11,8 +11,7 @@ const temp = `# npm or yarn
 
 # dist
 /dist
-/build
-`;
+/build`;
 
 function generateTemp() {
   return temp;

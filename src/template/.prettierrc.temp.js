@@ -9,8 +9,7 @@ const temp = `{
     }
   ],
   "endOfLine": "auto"
-}
-`;
+}`;
 
 function generateTemp() {
   return temp;
