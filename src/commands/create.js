@@ -54,6 +54,7 @@ async function create(projectName) {
         ),
       );
     } catch (error) {
+      console.log('写入项目模板出错了...抱歉...')
       console.log(error);
       process.exit(1);
     }
