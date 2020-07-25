@@ -26,6 +26,7 @@ async function create(projectName) {
         'config/webpack.config.prod.ts',
         'config/webpack.config.ts',
         'public/.gitkeep',
+        'src/components/MyTest/MyTest.tsx',
         'src/app.less',
         'src/app.tsx',
         'src/globals.d.ts',
