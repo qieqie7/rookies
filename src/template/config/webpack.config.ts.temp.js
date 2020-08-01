@@ -6,17 +6,17 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WebpackBar from 'webpackbar';
 // 用户自定义外部配置
-import holaConfig from './.holarc';
+import rookieConfig from './.rookierc';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 type Config = Configuration & devConfiguration;
 
-const { outputPath = './dist' } = holaConfig;
+const { outputPath = './dist' } = rookieConfig;
 
 const config: Config = {
   entry: path.resolve(__dirname, '../src/app.tsx'),
-  output: { path: path.resolve(__dirname, '../', outputPath), filename: 'hola.bundle.[hash:8].js' },
+  output: { path: path.resolve(__dirname, '../', outputPath), filename: 'rookie.bundle.[hash:8].js' },
   module: {
     rules: [
       {
@@ -74,7 +74,7 @@ const config: Config = {
     }
   },
 
-  externals: holaConfig.externals,
+  externals: rookieConfig.externals,
   // optimization: {
   //   splitChunks: {
   //     chunks: 'all',

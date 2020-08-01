@@ -18,7 +18,7 @@ function createCommand(program) {
       });
     });
 
-  // program.on('--help', () => console.log(`  hola create test-project`));
+  // program.on('--help', () => console.log(`  rookie create test-project`));
 }
 
 async function create(userInputName) {
@@ -54,8 +54,8 @@ async function create(userInputName) {
 
   // 2. 开始写入项目配置模板
   const files = [
-    'config/.hola.types.ts',
-    'config/.holarc.ts',
+    'config/.rookie.types.ts',
+    'config/.rookierc.ts',
     'config/tsconfig-for-webpack-config.json',
     'config/webpack.config.dev.ts',
     'config/webpack.config.prod.ts',
@@ -75,7 +75,7 @@ async function create(userInputName) {
     '.prettierrc',
     'package.json',
     'README.md',
-    'tsconfig,json'
+    'tsconfig.json'
   ];
   const filesCount = files.length;
   console.log(chalk.green(`🧐 开始写入模板，共计${filesCount}个文件...\n`));

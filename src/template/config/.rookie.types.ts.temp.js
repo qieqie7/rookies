@@ -1,7 +1,7 @@
 const temp = `import { ProxyConfigMap, ProxyConfigArray } from 'webpack-dev-server';
 import webpack from 'webpack';
 
-export interface HolaConfiguration {
+export interface rookieConfiguration {
   // webpack
   outputPath?: string;
   proxy?: ProxyConfigMap | ProxyConfigArray;

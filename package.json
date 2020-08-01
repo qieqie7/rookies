@@ -1,5 +1,5 @@
 {
-  "name": "hola-cli",
+  "name": "rookie-cli",
   "version": "0.0.1",
   "description": "创建一个react应用",
   "main": "index.js",
@@ -7,13 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "hola": "./bin/www"
+    "rookie": "./bin/www"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ykst615/hola-cli"
   },
-  "keywords": ["react", "cli", "hola"],
+  "keywords": ["react", "cli", "rookie"],
   "author": "ykst615",
   "license": "MIT",
   "devDependencies": {
