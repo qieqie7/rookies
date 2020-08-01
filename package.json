@@ -25,13 +25,16 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "chalk": "^4.1.0",
     "commander": "^5.0.0",
     "consolidate": "^0.15.1",
     "ejs": "^3.0.2",
+    "execa": "^4.0.3",
     "fs-extra": "^9.0.1",
     "inquirer": "^7.1.0",
     "metalsmith": "^2.3.0",
     "ncp": "^2.0.0",
-    "ora": "^4.0.4"
+    "ora": "^4.0.4",
+    "validate-npm-package-name": "^3.0.0"
   }
 }
