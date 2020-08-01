@@ -1,19 +1,19 @@
 {
-  "name": "rookie-cli",
-  "version": "0.0.1",
+  "name": "rookies",
+  "version": "0.0.2",
   "description": "创建一个react应用",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "rookie": "./bin/www"
+    "rookies": "./bin/www"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ykst615/hola-cli"
   },
-  "keywords": ["react", "cli", "rookie"],
+  "keywords": ["react", "cli", "rookies"],
   "author": "ykst615",
   "license": "MIT",
   "devDependencies": {

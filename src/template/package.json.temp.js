@@ -1,5 +1,5 @@
 const temp = `{
-  "name": "rookie-temp",
+  "name": "rookies-temp",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",

@@ -18,7 +18,7 @@ function createCommand(program) {
       });
     });
 
-  // program.on('--help', () => console.log(`  rookie create test-project`));
+  // program.on('--help', () => console.log(`  rookies create test-project`));
 }
 
 async function create(userInputName) {
@@ -54,8 +54,8 @@ async function create(userInputName) {
 
   // 2. 开始写入项目配置模板
   const files = [
-    'config/.rookie.types.ts',
-    'config/.rookierc.ts',
+    'config/.rookies.types.ts',
+    'config/.rookiesrc.ts',
     'config/tsconfig-for-webpack-config.json',
     'config/webpack.config.dev.ts',
     'config/webpack.config.prod.ts',

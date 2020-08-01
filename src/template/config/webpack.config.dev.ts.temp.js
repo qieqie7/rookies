@@ -2,7 +2,7 @@ const temp = `import { HotModuleReplacementPlugin, Configuration } from 'webpack
 import webpackMerge from 'webpack-merge';
 import webpackBasicConfig from './webpack.config';
 // 用户自定义外部配置
-import rookieConfig from './.rookierc';
+import rookiesConfig from './.rookiesrc';
 
 const config: Configuration = {
   mode: 'development',
@@ -16,7 +16,7 @@ const config: Configuration = {
     historyApiFallback: true, // 单页面应用且使用historyApi会用到，他会让所有请求均返回特定页面，但可以配置路由规则
     port: 9527,
     open: true,
-    proxy: rookieConfig.proxy,
+    proxy: rookiesConfig.proxy,
     overlay: true, // 编译错误时，错误是否覆盖页面
   },
 };

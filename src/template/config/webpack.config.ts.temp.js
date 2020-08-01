@@ -6,17 +6,17 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import WebpackBar from 'webpackbar';
 // 用户自定义外部配置
-import rookieConfig from './.rookierc';
+import rookiesConfig from './.rookiesrc';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 type Config = Configuration & devConfiguration;
 
-const { outputPath = './dist' } = rookieConfig;
+const { outputPath = './dist' } = rookiesConfig;
 
 const config: Config = {
   entry: path.resolve(__dirname, '../src/app.tsx'),
-  output: { path: path.resolve(__dirname, '../', outputPath), filename: 'rookie.bundle.[hash:8].js' },
+  output: { path: path.resolve(__dirname, '../', outputPath), filename: 'rookies.bundle.[hash:8].js' },
   module: {
     rules: [
       {
@@ -74,7 +74,7 @@ const config: Config = {
     }
   },
 
-  externals: rookieConfig.externals,
+  externals: rookiesConfig.externals,
   // optimization: {
   //   splitChunks: {
   //     chunks: 'all',
