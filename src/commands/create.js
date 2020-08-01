@@ -75,6 +75,7 @@ async function create(userInputName) {
     '.prettierrc',
     'package.json',
     'README.md',
+    'tsconfig,json'
   ];
   const filesCount = files.length;
   console.log(chalk.green(`🧐 开始写入模板，共计${filesCount}个文件...\n`));
