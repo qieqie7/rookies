@@ -43,11 +43,13 @@ async function create(userInputName) {
   }
 
   // 1. 正常创建项目根目录
-  try {
-    await fse.mkdir(projectPath);
-  } catch {
-    console.error(chalk.red(`当前路径存在相同项目名：${projectName}`));
-    process.exit(1);
+  if (!inCurrent) {
+    try {
+      await fse.mkdir(projectPath);
+    } catch {
+      console.error(chalk.red(`当前路径存在相同项目名：${projectName}`));
+      process.exit(1);
+    }
   }
 
   // 2. 开始写入项目配置模板
@@ -87,12 +89,13 @@ async function create(userInputName) {
   // 3. 执行 npm install
   console.log(chalk.green(`安装依赖...`));
   /**
-   * NOTE: 显示子进程依赖安装过程 
+   * NOTE: 显示子进程依赖安装过程
    * stdio: ['inherit', 'inherit', 'inherit'],
    * 抄的vue-cli，必须写三个，暂不清楚为什么
    * inherit 会让子进程继承主进程的 stdin stdout stderr
    * # http://nodejs.cn/api/child_process.html#child_process_options_stdio
-   */ 
+   */
+
   await execa('npm', ['install', '--loglevel', 'error'], {
     cwd: projectPath,
     stdio: ['inherit', 'inherit', 'inherit'],
