@@ -42,7 +42,10 @@ async function create(userInputName) {
     process.exit(1);
   }
 
-  // 1. 正常创建项目根目录
+  // 融合配置
+  const config = { projectName }
+
+  // 1. 不在当前目录生成项目，需要正常创建项目目录
   if (!inCurrent) {
     try {
       await fse.mkdir(projectPath);
@@ -81,7 +84,7 @@ async function create(userInputName) {
   console.log(chalk.green(`🧐 开始写入模板，共计${filesCount}个文件...\n`));
   console.log(chalk.green(`😎 模板写入成功...\n`));
   try {
-    await Promise.all(files.map(filePath => writeFile(projectPath, filePath)));
+    await Promise.all(files.map(filePath => writeFile(projectPath, filePath, config)));
   } catch (error) {
     console.error(chalk.red('😅 文件写入异常'));
     console.error(error);
@@ -102,14 +105,14 @@ async function create(userInputName) {
     stdio: ['inherit', 'inherit', 'inherit'],
   });
   console.log(chalk.green('😎 项目安装完毕，尝试启动服务吧！\n'));
-  console.log(chalk.green(`       npm run dev`));
-  console.log(chalk.green(`       yarn dev`));
+  console.log(chalk.green(`     $ npm run dev`));
+  console.log(chalk.green(`     $ yarn dev`));
   console.log(chalk.green('\n🥳 see you again!'));
 }
 
-async function writeFile(projectPath, filePath) {
+async function writeFile(projectPath, filePath, config) {
   const _path = path.join(projectPath, filePath);
-  const tempData = require(`../template/${filePath}.temp`)();
+  const tempData = require(`../template/${filePath}.temp`)(config);
   return fse.outputFile(_path, tempData);
 }
 

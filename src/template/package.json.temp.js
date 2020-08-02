@@ -1,5 +1,5 @@
 const temp = `{
-  "name": "rookies-temp",
+  "name": "\${projectName}",
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
@@ -61,8 +61,11 @@ const temp = `{
 }
 `;
 
-function generateTemp() {
-  return temp;
+function generateTemp(config) {
+  // FIXME: 暂时用replace的方案替换关键词，后续参数不仅仅是字符串，可能是boolean
+  return temp.replace(/\${(.*?)}/g, (matchStr, keyword) => {
+    return config[keyword] || 'unknown keyword';
+  })
 }
 
 module.exports = generateTemp;

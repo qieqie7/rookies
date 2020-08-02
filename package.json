@@ -11,9 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ykst615/hola-cli"
+    "url": "git+https://github.com/ykst615/rookies"
   },
-  "keywords": ["react", "cli", "rookies"],
+  "keywords": [
+    "react",
+    "cli",
+    "rookies"
+  ],
   "author": "ykst615",
   "license": "MIT",
   "devDependencies": {
