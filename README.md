@@ -15,3 +15,4 @@ $ rookies c <projectName>
 - huskyrc 有啥用
 - 发布到npm
 - 目前都是没有配置功能
+- 开启css module 影响 node_modules 内文件

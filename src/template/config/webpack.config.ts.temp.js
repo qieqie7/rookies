@@ -34,20 +34,14 @@ const config: Config = {
         ],
       },
       {
-        test: /\.less$/,
+        test: /.(le|c)ss$/,
+        include: path.resolve(__dirname, '..', 'node_modules'),
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
             options: { esModule: true, hmr: !isProd, reload: true },
           },
-          {
-            loader: 'css-loader', // translates CSS into CommonJS
-            options: {
-              modules: {
-                localIdentName: '[local]_[hash:base64:6]',
-              },
-            },
-          },
+          'css-loader', // translates CSS into CommonJS
           'less-loader', // compiles Less to CSS
         ],
       },

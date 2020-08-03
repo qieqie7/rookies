@@ -6,6 +6,26 @@ import rookiesConfig from './.rookiesrc';
 
 const config: Configuration = {
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /.(le|c)ss$/,
+        exclude: path.resolve(__dirname, '..', 'node_modules'),
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader', // translates CSS into CommonJS
+            options: {
+              modules: {
+                localIdentName: '[local]_[hash:base64:6]',
+              },
+            },
+          },
+          'less-loader', // compiles Less to CSS
+        ],
+      },
+    ],
+  },
   plugins: [
     // devServer 好像自带的，dev-middleware 需要配合
     // new HotModuleReplacementPlugin(),
