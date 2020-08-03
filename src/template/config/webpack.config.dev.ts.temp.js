@@ -3,6 +3,7 @@ import webpackMerge from 'webpack-merge';
 import webpackBasicConfig from './webpack.config';
 // 用户自定义外部配置
 import rookiesConfig from './.rookiesrc';
+import path from 'path';
 
 const config: Configuration = {
   mode: 'development',

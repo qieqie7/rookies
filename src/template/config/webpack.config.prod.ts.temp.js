@@ -3,6 +3,8 @@ import webpackMerge from 'webpack-merge';
 import webpackBasicConfig from './webpack.config';
 // 用户自定义外部配置
 import rookiesConfig from './.rookiesrc';
+import path from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const config: Configuration = {
   mode: 'production',
